@@ -3,7 +3,7 @@ import pickle
 import pandas as pd
 import numpy as np
 import psycopg2
-conn=psycopg2.connect(dbname='Price_optimization',user='postgres',password='Bu6LYvqQw@123',host='127.0.0.1',port='5432')
+conn=psycopg2.connect(**st.secrets["postgres"])
 cur=conn.cursor()
 curs = conn.cursor()
 curs.execute("ROLLBACK")
@@ -13,6 +13,9 @@ cur.execute('SELECT * FROM "project_price_optimization"')
 #cur.execute('SELECT * FROM dataoptimize ORDER BY zone, name, brand, mc')
 df = cur.fetchall()
 
+if (len(df) == 0):
+    st.write('No records found in DB')
+    sys.exit(0)
 import pandas as pd
 
 df1 = pd.DataFrame(df)
