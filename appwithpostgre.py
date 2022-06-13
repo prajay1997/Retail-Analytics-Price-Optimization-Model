@@ -42,19 +42,19 @@ else:
     df1=df1.rename({19:'DIS%'},axis=1)
     df1[['quantity','NSV', 'GST_Value', 'NSV-GST', 'sales_at _cost', 'SALES_AT_COST', 'MARGIN%', 'Gross_Sales', 'GrossRGM(P-L)', 'Gross_ Margin%(Q/P*100)', 'MRP', 'price', 'DIS', 'DIS%']] = df1[['quantity','NSV', 'GST_Value', 'NSV-GST', 'sales_at _cost', 'SALES_AT_COST', 'MARGIN%', 'Gross_Sales', 'GrossRGM(P-L)', 'Gross_ Margin%(Q/P*100)', 'MRP', 'price', 'DIS', 'DIS%']].apply(pd.to_numeric)
 
-    df1.columns
+    # df1.columns
 
     # checking the Duplicated values present in the datasets
-    df1[df1.duplicated()]
+    # df1[df1.duplicated()]
     data = df1.drop_duplicates()
 
     # Checking The null values present in th datasets
     data.isnull().sum()
     data = data.dropna()
-    data.shape
+    # data.shape
 
     data = data.loc[data['MARGIN%'] > 0,:]
-    data.shape
+    # data.shape
 
     st.title('Price Optimization')
 
