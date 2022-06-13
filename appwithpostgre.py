@@ -60,7 +60,7 @@ else:
 
     Unique_Products =pickle.load(open('Unique_Products.pkl','rb'))
     Zone = pickle.load(open('Zone.pkl','rb'))
-    model = pickle.load(open('model.pkl','rb'))
+    #model = pickle.load(open('model.pkl','rb'))
 
 
     Selected_Product_Name = st.selectbox(
