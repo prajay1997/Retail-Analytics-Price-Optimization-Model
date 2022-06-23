@@ -1,1 +1,1 @@
-web: sh setup.sh && streamlit run appwithpostgre.py
+web: streamlit run appwithpostgre.py

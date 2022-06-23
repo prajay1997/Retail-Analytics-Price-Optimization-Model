@@ -1,7 +1,6 @@
 streamlit
-pickle
 pandas
 numpy
-psycopg2
 statsmodels
 matplotlib
+psycopg2-binary==2.9.3
